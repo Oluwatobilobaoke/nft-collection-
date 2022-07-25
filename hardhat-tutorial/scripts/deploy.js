@@ -33,7 +33,10 @@ async function main() {
   // Verify the contract after deploying
   await hre.run("verify:verify", {
     address: deployedYDMCollectionContract.address,
-    constructorArguments: [],
+    constructorArguments: [
+      metadataURL,
+      whitelistContract
+    ],
   });
 
   function sleep(ms) {
